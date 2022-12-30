@@ -1,0 +1,36 @@
+/* RESET */
+* {margin: 0; padding: 0; font-size: 100%; font-family: 'Calibri', sans-serif; 
+    font-weight: normal; box-sizing: border-box; border: none; outline: none; overflow-x:auto;}
+    img {max-width: 100%;}
+    ul {list-style: none;}
+    a {text-decoration: none;}
+    h2 {font-size: 1.5em; color: rgb(5, 5, 5);}
+    p {font-size: 1em; color:rgb(3, 3, 3);}
+
+.q1{
+
+    background-color: rgb(216, 187, 187);
+}
+.botadd {
+ float: right;
+}
+.botvoltar {
+float: left; 
+}
+.footer {
+   
+        bottom: 100%;
+        position: fixed;
+        width: 100%;
+        
+}
+table {
+    width:100%;
+    border-collapse:collapse;
+}
+
+.bod {
+background-color: rgb(248, 239, 239);
+}
+
+/*     <table class="table table-danger" border="10" style="width:100%" >

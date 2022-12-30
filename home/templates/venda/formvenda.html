@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block conteudo %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Crud com Python</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+</head>
+<body>
+
+<div class="col-8 m-auto pt-2 pb-2 text-center">
+    <h1>Cadastrar Vendas</h1>
+</div>
+
+<br><br>
+<div class="col-8 m-auto pt-2 pb-2  text-center">
+    <a href="/principal" class="btn btn-secondary btn-lg">Pagina Principal</a>
+</div>
+
+<div class="col-18 m-auto pt-20 pb-20  text-right">
+    <a href="/homevenda" class="btn btn-primary btn-lg">Voltar</a>
+</div>
+
+<div class="col-50 m-auto pt-13 pb-12  text-center">
+    <div id="result"></div>
+
+      <div class="col-8 m-auto pt-4 pt-2 text-center"></div>
+        <form  name="formvenda" id="formvenda" action="{% if db %}/updatevenda/{{db.id}}/{%else%}/createvenda/{% endif %}" method="post">
+            {% csrf_token %}
+            <!--{{form.as_p}}-->
+            {{ form|crispy }}
+
+<input type="submit" class="btn btn-success" value="Salvar">
+ </form>
+</div>
+
+<script>
+
+$(document).ready(function() {
+     $('#id_pessoa.select.form-control').select2();
+});
+
+</script>
+<script>
+
+$(document).ready(function() {
+     $('#id_produto.select.form-control').select2();
+});
+
+</script>
+
+<script>
+
+$(document).ready(function() {
+     $('#id_pag').select2();
+});
+
+</script>
+
+{% endblock %}
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+</body>
+</html>
+
+
